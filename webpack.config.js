@@ -2,9 +2,9 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
     // directory where compiled assets will be stored
-    .setOutputPath('public_html/')
+    .setOutputPath('public_html/build')
     // public path used by the web server to access the output path
-    .setPublicPath('/')
+    .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
@@ -17,12 +17,12 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('main', './src/js/main.js')
+    .addEntry('scripts', './src/js/main.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
 
-    .addStyleEntry('maincss', './src/sass/main.scss')
+    .addStyleEntry('main', './src/sass/main.scss')
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
