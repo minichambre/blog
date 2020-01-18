@@ -1,6 +1,51 @@
 @import "~bootstrap/scss/bootstrap-grid";
-$PRIMARY: #F60;
 
 body {
-    background: $PRIMARY;
+    margin:0px;
+    padding:0px;
+}
+
+
+.hero-wrapper {
+    background-image: url("/images/custom/hero.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    height:100%;
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+    }
+
+    h2 {
+        font-size: 76px;
+        margin:0px
+    }
+
+    .hero-inner {
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        height:100%;
+        width:100%;
+        align-items: center;
+        justify-items: center;
+        .intro {
+            margin-top:-25%;
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .links {
+            .single {
+                background: white;
+                border-radius: 5px;
+                border: 1px solid black;
+                h3 {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
 }
