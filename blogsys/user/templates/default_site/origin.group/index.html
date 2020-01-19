@@ -7,8 +7,10 @@
         </div>
         <div class='links'>
             <div class='blog'>
-                <h3>Blog</h3>
-            </div>
+                <a href='#blog-hub'>
+                    <h3>Blog</h3>
+                </a>
+                </div>
             <div class='projects'>
                 <h3>Projects</h3>
             </div>
@@ -18,7 +20,8 @@
         </div>
     </div>
 </div>
-<div class='blog-wrapper'>
+
+<div class='wrapper blog-wrapper' id='blog-hub'>
     <div class='recent'>
         <h2>Newest Blog Posts</h2>
         {embed='_embeds/_homepage_blog' order='recent'}
@@ -28,5 +31,8 @@
         {embed='_embeds/_homepage_blog' order='popular'}
     </div>
     <a href="/blog" class='cta cta-full'>View All Blog Posts</a>
-    
+</div>
+
+<div class='wrapper projects-wrapper'>
+    <h2>Projects</h2>
 </div>
