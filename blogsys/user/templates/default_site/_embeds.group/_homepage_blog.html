@@ -1,0 +1,8 @@
+{exp:channel:entries channel='blog' limit='3'}
+<div class='homepage_blog_block'>
+    <h3>{title}</h3>
+    <h4>{entry_date format="%F %d %Y"}</h4>
+    <p>{short_body}</p>
+    <a class='cta' href="blog/{url_title}">Continue Reading</a>
+</div>
+{/exp:channel:entries}
