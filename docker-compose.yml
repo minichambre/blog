@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    web: 
+        image: nginx:latest
+        ports:
+            -  "80:80"
+        volumes:
+            -  .:/blog
+            -  ./site.conf:/etc/nginx/conf.d/default.conf
+
+    php:
+        build: 
+            context: .
+            dockerfile: extensions
+        volumes:
+            - .:/blog
