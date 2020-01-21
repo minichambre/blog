@@ -1,1 +1,7 @@
-Im a single
+{layout='_layouts/_base'}
+<div class='wrapper'>
+    {exp:channel:entries channel='blog' limit='1' dynamic='yes'}
+    <h1>{title}</h1>
+    {long_body}
+    {/exp:channel:entries}
+</div>

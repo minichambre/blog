@@ -6,7 +6,15 @@
 
     </head>
     <body>
+        {if !segment_1}
         {layout:contents}
+        {if:else}
+        <nav></nav>
+        <div class='content-wrapper'>
+            {layout:contents}
+        </div>
+        {/if}
+
         <script src="/build/runtime.js"></script>
         <script src="/build/scripts.js"></script>
     </body>
