@@ -1,0 +1,19 @@
+.blog-single-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items:start;
+}
+.blog-single {
+
+    padding: 0px 50px 0px 0px;
+
+    h1 {
+        text-align: left;
+        margin-top: 0px;
+    }
+    .date {
+        color: $FONT_COLOR_MED;
+        display: block;
+        margin-bottom: 10px;
+    }
+}

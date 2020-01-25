@@ -1,0 +1,35 @@
+{layout="_layouts/_base"}
+<div class='blog-single-container'>
+    {exp:channel:entries channel='blog' limit='1' dynamic='yes'}
+    <div class='blog-single'>
+        <h1>{title}</h1>
+        <div class='meta'>
+            <div class='date'>{entry_date format="%F %d %Y"}</div>
+            <div class='tags'>
+                <div class='tag'>Modern</div>
+                <div class='tag'>Frontend</div>
+            </div>
+        </div>
+        <p>
+            {long_body}
+        </p>
+    </div>
+    {/exp:channel:entries}
+    <div class='sidebar'>
+        <div class='sidebar-title'>You might also like...</div>
+        {exp:channel:entries channel='blog' limit='5' dynamic='no'}
+        <div class='other-blog'>
+            <h3>{title}</h3>
+            <div class='tags'>
+                <div class='tag'>Modern</div>
+                <div class='tag'>Frontend</div>
+            </div>
+            <p>
+                {short_body}
+                <a href="/blog/{url_title}" class='primary-cta'>Read more</a>
+            </p>
+        </div>
+        {/exp:channel:entries}
+        <a class='view-all' href="/blog">View All Blog Posts</a>
+    </div>
+</div>
