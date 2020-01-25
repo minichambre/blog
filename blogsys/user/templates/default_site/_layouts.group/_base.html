@@ -3,17 +3,40 @@
         <title> Dev Blog | Dan Gowing </title>
         <link rel="stylesheet" href="/build/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/all.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:300&display=swap" rel="stylesheet"> 
+        <style>
+            /* Critial Styles that need to load on page load */
+            
+            {if layout:critical_css}
+            {layout:critical_css}
+            {/if}
+        </style>
     </head>
     <body>
-        {if !segment_1}
-        {layout:contents}
-        {if:else}
-        <nav></nav>
-        <div class='content-wrapper'>
+        <nav>
+            <div class='nav-container'>
+                <div class='title'> DanGowing.com</div>
+                <input type="text" placeholder='search'/>
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </nav>
+        <div class='outer-container'></div>
+        <div class='container'>
             {layout:contents}
+            <div class='footer'>
+                <a href='/'>dangowing.com</a>
+                <div>
+                    <a href="/blog">Blog</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/contact">Contact</a>
+                </div>
+                <div class='copyright'>Copyright</div>
+            </div>
         </div>
-        {/if}
+
+
 
         <script src="/build/runtime.js"></script>
         <script src="/build/scripts.js"></script>
