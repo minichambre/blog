@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["scripts"],{kpGR:function(e,n){console.log("testing"),document.querySelector(".test").innerHTML="correct"}},[["kpGR","runtime"]]]);

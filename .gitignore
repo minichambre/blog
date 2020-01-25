@@ -2,7 +2,6 @@ blogsys/user/config/config.php
 node_modules
 vendor
 .DS_Store
-public_html/build/*
 cert_chain.crt
 dangowing.com.key
 blogsys/user/cache

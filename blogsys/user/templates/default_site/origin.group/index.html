@@ -1,45 +1,36 @@
 {layout="_layouts/_base"}
-<div class='hero-wrapper'>
-    <div class='hero-inner'>
-        <div class='intro'>
-            <h1> Professional Web Developer </h1>
-            <h2> Dan Gowing</h2>
-        </div>
-        <div class='links'>
-            <div class='jump-link blog'>
-                <a href='#blog-hub'>
-                        <h3>Blog</h3>
-                    </a>
-                </div>
-                <div class='jump-link projects'>
-                <a href='#project-hub'>
-                    <h3>Projects</h3>
-                </a>
-                </div>
-                <div class='jump-link contact'>
-                <a href='#contact-hub'>
-                    <h3>Contact</h3>
-                </a>
-                </div>
+
+<div class='about'>
+    <div class='profile'>
+        <img src="/images/custom/me.jpeg" alt="Dan Gowing">
+        <div class='profile-info'>
+            <h1>Professional Web Developer</h1>
+            <h2>Daniel Gowing</h2>
         </div>
     </div>
-</div>
-
-<div class='wrapper blog-wrapper' id='blog-hub'>
-    <div class='column recent'>
-        <h2>Newest Blog Posts</h2>
-        {embed='_embeds/_homepage_blog' order='recent'}
+    <div class='site-info'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo accusamus enim blanditiis vel dolor sunt! In perspiciatis recusandae sint quas reiciendis deleniti delectus error omnis, magnam sed animi maxime. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, facilis expedita labore omnis eum totam repellat corrupti odit, officiis fugiat, asperiores aliquam earum enim dolorem ullam suscipit perspiciatis autem ad!
     </div>
-    <div class='column popular'>
-        <h2>Trending Blog Posts</h2>
-        {embed='_embeds/_homepage_blog' order='popular'}
-    </div>
-    <a href="/blog" class='cta cta-full'>View All Blog Posts</a>
 </div>
-
-
-
-<div class='wrapper projects-wrapper' id='project-hub'>
-    <div class='full-rule-divide'></div>
-    <h2>Projects</h2>
+<div>
+    <h2> Newest Blog Posts</h2>
+    <div class='featured-blogs'>
+        {exp:channel:entries channel='blog' limit='2' dynamic='no'}
+        <div class='blog-post'>
+            <h3><a href='/blog/{url_title}'>{title}</a></h3>
+            <div class='meta'>
+                <div class='date'>{entry_date format="%F %d %Y"}</div>
+                <div class='tags'>
+                    <div class='tag'>Modern</div>
+                    <div class='tag'>Frontend</div>
+                </div>
+            </div>
+            <p>
+                {short_body}
+            </p>
+            <a class='primary-cta' href="/blog/{url_title}">Continue Reading</a>
+        </div>
+        {/exp:channel:entries}
+    </div>
+    <a href="/blog" class='view-all'>View All Blog Posts</a>
 </div>
