@@ -1,6 +1,7 @@
 body {
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
 }
 nav {
     background: #F9F9F9;
@@ -17,10 +18,16 @@ nav {
     z-index:1;
     padding: 40px 50px 0px 50px;
     box-sizing: border-box;
+    @media only screen and (max-width:$MOBILE) { 
+        padding: 40px 10px 0px 10px;
+    }
 }
 .nav-container {
     display: grid;
     grid-template-columns: 3fr 1fr .5fr;
+    @media only screen and (max-width:400px) {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
     justify-items: flex-end;
     align-items: center;
     padding:15px 30px;
@@ -35,6 +42,23 @@ nav .title {
         text-decoration: none;
         color: $FONT_COLOR_DARK;
     }
+    @media only screen and (max-width:$MOBILE){
+    display: none;
+    }
+}
+
+nav .title-short {
+    display: none;
+    justify-self: flex-start;
+    font-size: 34px;
+    font-family: $FONT_HEADERS;
+    &:hover {
+        text-decoration: none;
+        color: $FONT_COLOR_DARK;
+    }
+    @media only screen and (max-width:$MOBILE){
+        display: block;
+    }
 }
 nav input {
     width: 100%;
@@ -42,10 +66,79 @@ nav input {
     border-radius: 5px;
     padding: 15px;
     background: #E9E9E9;
+    @media only screen and (max-width:$MOBILE) {
+        display: none;
+        
+    }
 }
 .fa-bars {
     color: #E9E9E9;
     font-size: 40px;
+    grid-column: 3;
+    &:hover {
+        cursor:pointer;
+    }
+}
+.nav-container .fa-search {
+    display: none;
+    grid-column: 2;
+    color: #E9E9E9;
+    font-size: 40px;
+    &:hover {
+        cursor:pointer;
+    }
+    @media only screen and (max-width:$MOBILE) {
+        display: block;
+    }
+}
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+
+    pointer-events: none;
+    z-index: 2;
+    background: #000000ad;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    &.visible {
+        opacity: 1;
+        pointer-events: unset;
+    }
+}
+
+#nav-menu {
+    position: absolute;
+    right: -320px;
+    top: 0;
+    width: 100%;
+    background:white;
+    max-width: 320px;
+    text-align: center;
+    height: 100%;
+    z-index: 3;
+    box-shadow: 0px 0px 10px 10px #00000026;
+    padding: 100px 20px;
+    box-sizing: border-box;
+    transition: right 0.4s ease-in-out;
+
+    ul {
+        list-style: none;
+        padding:0px;
+        li {
+            font-family: $FONT_CONTENT;
+            color: $FONT_COLOR_MED;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &.visible {
+        right:0px
+    }
 }
 .outer-container {
     background: url('/images/custom/hero.png') center no-repeat;
@@ -168,6 +261,9 @@ p {
     .other-blog {
         border-bottom: 1px solid #70707033;
     }
+    @media only screen and (max-width:$MOBILE) {
+        display: none;
+    }
 }
 
 .footer {
@@ -182,11 +278,23 @@ p {
         justify-content: space-evenly;
         a {
             margin:0px 10px;
+            @media only screen and (max-width:$MOBILE) { 
+                width:33%;
+                margin-bottom: 15px;
+            }
         }
     }
     a, .copyright {
         font-family: $FONT_CONTENT;
         color: $FONT_COLOR_MED;
         text-decoration: none;
+        @media only screen and (max-width:$MOBILE) { 
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+    @media only screen and (max-width:$MOBILE) { 
+        margin: 50px -10px 0px -10px;
+        flex-direction: column;
     }
 }

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title> Dev Blog | Dan Gowing </title>
-        <link rel="stylesheet" href="/build/main.css">
+        <link rel="stylesheet" href="/build/main.css?v=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/all.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:300&display=swap" rel="stylesheet"> 
@@ -17,12 +17,22 @@
         <nav>
             <div class='nav-container'>
                 <a class='title' href='/'> DanGowing.com</a>
+                <a class='title-short' href='/'> DG.com</a>
                 <input type="text" placeholder='search'/>
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bars" id='menu'></i>
             </div>
-
         </nav>
         <div class='outer-container'></div>
+        <div id='mask'></div>
+        <div id='nav-menu' class=''>
+            <ul>
+                <li><a href="/"> Home</a></li>
+                <li><a href='/blog'>Blog</a></li>
+                <li><a href='/projects'>Projects</a></li>
+                <li><a href='/contact'>Contact</a></li>
+            </ul>
+        </div>
         <div class='container'>
             {layout:contents}
             <div class='footer'>
@@ -38,8 +48,8 @@
 
 
 
-        <script src="/build/runtime.js"></script>
-        <script src="/build/scripts.js"></script>
+        <script src="/build/runtime.js?v=1"></script>
+        <script src="/build/scripts.js?v=1"></script>
     </body>
     
 </html>

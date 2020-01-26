@@ -1,1 +1,5 @@
 {layout="_layouts/_base"}
+
+{exp:channel:entries limit='10' dynamic='no' paginate='top' channel='blog'}
+<h2><a href="/blog/{url_title}">{title}</a></h2>
+{/exp:channel:entries}
