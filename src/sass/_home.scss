@@ -5,22 +5,41 @@
     justify-content:space-between;
     padding: 50px;
     align-items: center;
+
+    @media only screen and (max-width:$MOBILE) 
+    {
+        flex-direction: column;
+        padding: 20px;
+        margin: -40px -10px 0px -10px;
+    }
 }
 .profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 45%;
+    @media only screen and (max-width:$MOBILE) {
+        width: 100%;
+        max-width: 420px;
+        margin-bottom: 20px;
+    }
 }
 .site-info {
     width:45%;
     font-family: $FONT_CONTENT;
     font-weight: 300;
+    @media only screen and (max-width:$MOBILE) {
+        width:100%;
+    }
 }
 .profile img {
     max-height:200px;
     max-width:200px;
     border-radius:100px;
+    @media only screen and (max-width:$MOBILE) { 
+        max-height: 150px;
+        max-width: 150px;
+    }
 }
 .profile-info h1 {
     font-size:16px;
@@ -39,6 +58,12 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
 
+    @media only screen and (max-width:$MOBILE) {
+        grid-template-columns: 1fr;;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
     .blog-post {
         padding:10px;
         box-shadow: 0px 0px 10px 0px #0000001c;

@@ -2,10 +2,16 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items:start;
+    @media only screen and (max-width:$MOBILE) {
+        grid-template-columns: 1fr;
+    }
 }
 .blog-single {
 
     padding: 0px 50px 0px 0px;
+    @media only screen and (max-width:$MOBILE) {
+        padding: unset;
+    }
 
     h1 {
         text-align: left;
