@@ -20,11 +20,19 @@
                 <a class='title-short' href='/'> DG.com</a>
                 <input type="text" placeholder='search'/>
                 <i class="fas fa-search"></i>
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" id='menu'></i>
             </div>
-
         </nav>
         <div class='outer-container'></div>
+        <div id='mask'></div>
+        <div id='nav-menu' class=''>
+            <ul>
+                <li><a href="/"> Home</a></li>
+                <li><a href='/blog'>Blog</a></li>
+                <li><a href='/projects'>Projects</a></li>
+                <li><a href='/contact'>Contact</a></li>
+            </ul>
+        </div>
         <div class='container'>
             {layout:contents}
             <div class='footer'>
