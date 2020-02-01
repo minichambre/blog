@@ -16,7 +16,7 @@ nav {
     box-shadow: 0px 0px 10px 5px #0003;
     position: relative;
     z-index:1;
-    padding: 40px 50px 0px 50px;
+    padding: 30px 50px 0px 50px;
     box-sizing: border-box;
     @media only screen and (max-width:$MOBILE) { 
         padding: 40px 10px 0px 10px;
@@ -156,6 +156,9 @@ h1,h2,h3,h4 {
     font-weight: 400;
     color: $FONT_COLOR_DARK;
 }
+h1 {
+    margin-top: 0px;
+}
 h2 {
     font-size: 24px;
 }
@@ -178,7 +181,7 @@ p {
     font-family: $FONT_CONTENT;
     font-size: 16px;
     line-height: 21px;
-    color: $FONT_COLOR_MED;
+    color: $FONT_COLOR_DARK;
 
     a {
         color: $PRIMARY_COLOR;
@@ -189,7 +192,7 @@ p {
 .date {
     font-size: 12px;
     font-family: $FONT_HEADERS;
-    color: $FONT_COLOR_DARK;
+    color: $FONT_COLOR_MED;
     display: inline-block;
 }
 

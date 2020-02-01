@@ -1,5 +1,20 @@
 {layout="_layouts/_base"}
-
+<h1>The Blog</h1>
+<p>Browse any and all posts I've made about software and web development. There's truly something for everyone - just as long as you're not picky. Filter through topics such as docker and devops, or just 
+    {exp:channel:entries channel='blog' dynamic='no' limit='1' orderby='random'}
+        <a href='/blog/{url_title}'>click here</a>
+    {/exp:channel:entries}
+    if you'd like to see a random article.</p>
 {exp:channel:entries limit='10' dynamic='no' paginate='top' channel='blog'}
-<h2><a href="/blog/{url_title}">{title}</a></h2>
+<div class='blog_archive__single'>
+    <h3><a href="/blog/{url_title}">{title}</a></h3>
+    <div class='meta'>
+            <div class='date'>{entry_date format="%F %d %Y"}</div>
+            <div class='tags'>
+                <div class='tag'>Modern</div>
+                <div class='tag'>Frontend</div>
+            </div>
+    </div>
+    <p>{short_body}</p>
+</div>
 {/exp:channel:entries}

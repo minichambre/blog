@@ -23,3 +23,21 @@
         margin-bottom: 10px;
     }
 }
+
+.blog_archive__single {
+    h3 {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    .tags {
+        float:right;
+    }
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    p {
+        margin-top:5px;
+    }
+}
