@@ -19,14 +19,14 @@
         <div class='sidebar-title'>You might also like...</div>
         {exp:channel:entries channel='blog' limit='5' dynamic='no'}
         <div class='other-blog'>
-            <h3>{title}</h3>
+            <h4>{title}</h4>
             <div class='tags'>
                 <div class='tag'>Modern</div>
                 <div class='tag'>Frontend</div>
             </div>
             <p>
                 {short_body}
-                <a href="/blog/{url_title}" class='primary-cta'>Read more</a>
+                <a href="/blog/{url_title}" class=''>read more</a>
             </p>
         </div>
         {/exp:channel:entries}

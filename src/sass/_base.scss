@@ -112,7 +112,7 @@ nav input {
 
 #nav-menu {
     position: fixed;
-    right: -320px;
+    right: -350px;
     top: 0;
     width: 100%;
     background:white;
@@ -179,6 +179,11 @@ p {
     font-size: 16px;
     line-height: 21px;
     color: $FONT_COLOR_MED;
+
+    a {
+        color: $PRIMARY_COLOR;
+        text-decoration: underline;
+    }
 }
 
 .date {
@@ -194,7 +199,7 @@ p {
     padding: 5px 10px;
     font-weight: 400;
     margin:0px 5px 0px 0px;
-    background: $PRIMARY_COLOR;
+    background: #bef3be;
     font-size: 12px;
     font-weight: 400;
     border-radius: 5px;
@@ -263,6 +268,9 @@ p {
     }
     @media only screen and (max-width:$MOBILE) {
         display: none;
+    }
+    p {
+        font-size:12px;
     }
 }
 
