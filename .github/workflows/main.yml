@@ -8,10 +8,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
     steps:
       - name: checkout files
         uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: build assets
+        run: |
+          yarn install
+          yarn encore production
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
