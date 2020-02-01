@@ -13,23 +13,19 @@ jobs:
       matrix:
         node-version: [10.x]
     steps:
-      - name: checkout files
+      - name: Git Checkout
         uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: build assets
+      - name: Build Assets
         run: |
           yarn install
           yarn encore production
-      - name: Copy folder content recursively to remote
-        uses: garygrossgarten/github-action-scp@release
+      - name: Deploy to Server
+        uses: contention/rsync-deployments@v1.0.0
+        env: 
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with:
-          local: .
-          remote: /home/blog
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.PASSWORD }}
-        env:
-          CI: true
+          args: "-avzr --delete --exclude /node_modules/ root@95.179.201.50:/home/blog
