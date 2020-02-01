@@ -13,7 +13,7 @@
     if you'd like to see a random article.</p>
 {/if}
 
-{exp:channel:entries limit='1' dynamic='no' paginate='top' channel='blog' category="{embed:category}"}
+{exp:channel:entries limit='10' dynamic='no' paginate='top' channel='blog' category="{embed:category}"}
     <div class='blog_archive__single'>
         <h3><a href="/blog/{url_title}">{title}</a></h3>
         <div class='meta'>
@@ -26,7 +26,7 @@
         </div>
         <p>{short_body}</p>
     </div>
-    {paginate}
+    {!-- {paginate}
         {pagination_links}
-    {/paginate}
+    {/paginate} --}
 {/exp:channel:entries}
