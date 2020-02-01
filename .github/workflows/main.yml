@@ -29,4 +29,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{secrets.DEPLOY_KEY}} 
           REMOTE_HOST: ${{secrets.HOST}}
           REMOTE_USER: ${{secrets.SSH_USER}}
-          TARGET: "/home/blog/"
+          TARGET: ${{secrets.REMOTE_TARGET}}
+          SOURCE: "."
