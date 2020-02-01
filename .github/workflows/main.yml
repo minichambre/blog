@@ -24,8 +24,9 @@ jobs:
           yarn install
           yarn encore production
       - name: Deploy to Server
-        uses: contention/rsync-deployments@v1.0.0
+        uses: easingthemes/ssh-deploy@v2.0.7
         env: 
-          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
-        with:
-          args: "-avzr --exclude node_modules root@95.179.201.50:/home/blog"
+          SSH_PRIVATE_KEY: ${{secrets.DEPLOY_KEY}} 
+          REMOTE_HOST: ${{secrets.HOST}}
+          REMOTE_USER: ${{secrets.SSH_USER}}
+          TARGET: /home/blog/
