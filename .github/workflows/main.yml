@@ -28,4 +28,4 @@ jobs:
         env: 
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with:
-          args: "-avzr --delete --exclude /node_modules/ root@95.179.201.50:/home/blog"
+          args: "-avzr --exclude /node_modules/ root@95.179.201.50:/home/blog"
