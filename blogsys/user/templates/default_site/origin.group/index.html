@@ -23,8 +23,9 @@
             <div class='meta'>
                 <div class='date'>{entry_date format="%F %d %Y"}</div>
                 <div class='tags'>
-                    <div class='tag'>DevOps</div>
-                    <div class='tag'>Frontend</div>
+                    {categories style='linear' show_group='1' limit='3'}
+                        <div class='tag {category_name}'><a href="/blog/{category_url_title}">{category_name}</a></div>
+                    {/categories}
                 </div>
             </div>
             <p>

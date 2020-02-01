@@ -1,5 +1,31 @@
-{if !segment_2}
+
+{!-- Check if there's no segment 2, or segment 2 is pagination - it's an archive page --}
+{if !segment_2 || segment_2 ~ '/^P\d+\z/'}
     {embed='blog/_archive'}
 {if:elseif segment_2}
-    {embed='blog/_single'}
+    {!-- Well, it isn't an archive page - Is it a category archive, or a single entry? or neither? --}
+
+    {!-- Check URL for presence of a category --}
+    {if "{segment_2_category_group_id}" == "1"}
+        {exp:channel:categories category_group="1" style="linear" dynamic="no" limit="1" show="{segment_2_category_id}"}
+
+        {!-- Render a category archive page --}
+            {embed='blog/_archive' category="{category_id}"}
+        {/exp:channel:categories}
+    {if:else}
+
+        {!-- Definitely not an archive page - is there a matching blog channel entry? --}
+        {exp:channel:entries channel="blog" url_title="{segment_2}" dynamic="no" limit="1"}
+
+            {!-- No match --}
+            {if no_results}
+                {redirect="404"}
+            {/if}
+
+            {!-- Render blog single entry --}
+            {embed='blog/_single'}
+
+        {/exp:channel:entries}
+    {/if}
+
 {/if}

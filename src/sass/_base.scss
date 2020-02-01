@@ -202,10 +202,15 @@ p {
     padding: 5px 10px;
     font-weight: 400;
     margin:0px 5px 0px 0px;
-    background: #bef3be;
+    background: #e6e6e6;
     font-size: 12px;
     font-weight: 400;
     border-radius: 5px;
+
+    &:hover {
+        text-decoration: none;
+        color: $FONT_COLOR_DARK;
+    }
 }
 
 .tags {
