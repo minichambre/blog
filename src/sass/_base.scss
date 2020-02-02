@@ -36,29 +36,24 @@ nav {
 }
 nav .title {
     justify-self: flex-start;
+    align-items:center;
+    display: flex;
     font-size: 34px;
     font-family: $FONT_HEADERS;
-    &:hover {
-        text-decoration: none;
-        color: $FONT_COLOR_DARK;
-    }
-    @media only screen and (max-width:$MOBILE){
-    display: none;
-    }
-}
 
-nav .title-short {
-    display: none;
-    justify-self: flex-start;
-    font-size: 34px;
-    font-family: $FONT_HEADERS;
+    img {
+        max-width: 240px;
+        max-height: 50px;
+        @media only screen and (max-width:$MOBILE){
+            max-width: 160px;
+        }
+    }
+
     &:hover {
         text-decoration: none;
         color: $FONT_COLOR_DARK;
     }
-    @media only screen and (max-width:$MOBILE){
-        display: block;
-    }
+
 }
 nav input {
     width: 100%;
@@ -72,25 +67,14 @@ nav input {
     }
 }
 .fa-bars {
-    color: #E9E9E9;
-    font-size: 40px;
+    color: rgb(109, 109, 109);
+    font-size: 30px;
     grid-column: 3;
     &:hover {
         cursor:pointer;
     }
 }
-.nav-container .fa-search {
-    display: none;
-    grid-column: 2;
-    color: #E9E9E9;
-    font-size: 40px;
-    &:hover {
-        cursor:pointer;
-    }
-    @media only screen and (max-width:$MOBILE) {
-        display: block;
-    }
-}
+
 
 #mask {
     position: fixed;
