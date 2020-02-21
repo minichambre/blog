@@ -4,8 +4,8 @@
     <div class='profile'>
         <img src="/images/custom/me.jpeg" alt="Dan Gowing">
         <div class='profile-info'>
-            <h1>Professional Web Developer</h1>
-            <h2>Daniel Gowing</h2>
+            <h1>Full Stack Web Developer</h1>
+            <h2>Dan Gowing</h2>
         </div>
     </div>
     <div class='site-info'>
@@ -33,4 +33,22 @@
         {/exp:channel:entries}
     </div>
     <a href="/blog" class='view-all'>View All Blog Posts</a>
+</div>
+<div>
+    <h2> Newest Projects </h2>
+    <div class='featured-projects'>
+        {exp:channel:entries channel='project' limit='2' dynamic='no'}
+        <div class='project'>
+            <div class='image-container'>
+                <img src="{main_image}" alt="{title}">
+            </div>
+            <div class='description'>
+                <h3>{title}</h3>
+                <p>{short_body}</p>
+                <a class='primary-cta' href="{github_link}">View on GitHub</a>
+            </div>
+        </div>
+        {/exp:channel:entries}
+    </div>
+    <!-- <a href="/projects" class='view-all'>View All Projects</a> -->
 </div>
