@@ -1,13 +1,17 @@
 {layout="_layouts/_base"}
 <div class='blog-single-container'>
-    {exp:channel:entries channel='blog' limit='1' dynamic='yes'}
+    {exp:channel:entries channel='blog' limit='1' dynamic='no' url_title="{segment_2}"}
+    {if no_results}
+        {redirect='404'}
+    {/if}
     <div class='blog-single'>
         <h1>{title}</h1>
         <div class='meta'>
             <div class='date'>{entry_date format="%F %d %Y"}</div>
             <div class='tags'>
-                <div class='tag'>Modern</div>
-                <div class='tag'>Frontend</div>
+                {categories style='linear' show_group='1' limit='3'}
+                    <div class='tag {category_name}'>{category_name}</div>
+                {/categories}
             </div>
         </div>
         <p>
@@ -19,14 +23,15 @@
         <div class='sidebar-title'>You might also like...</div>
         {exp:channel:entries channel='blog' limit='5' dynamic='no'}
         <div class='other-blog'>
-            <h3>{title}</h3>
+            <h4>{title}</h4>
             <div class='tags'>
-                <div class='tag'>Modern</div>
-                <div class='tag'>Frontend</div>
+                {categories style='linear' show_group='1' limit='3'}
+                    <div class='tag {category_name}'><a href="/blog/{category_url_title}">{category_name}</a></div>
+                {/categories}
             </div>
             <p>
                 {short_body}
-                <a href="/blog/{url_title}" class='primary-cta'>Read more</a>
+                <a href="/blog/{url_title}" class=''>read more</a>
             </p>
         </div>
         {/exp:channel:entries}

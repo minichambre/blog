@@ -8,17 +8,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    strategy:
+      matrix:
+        node-version: [10.x]
     steps:
-      - name: checkout files
+      - name: Git Checkout
         uses: actions/checkout@v1
-      - name: Copy folder content recursively to remote
-        uses: garygrossgarten/github-action-scp@release
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          local: .
-          remote: /home/daniel/blog
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.PASSWORD }}
-        env:
-          CI: true
+          node-version: ${{ matrix.node-version }}
+      - name: Build Assets
+        run: |
+          yarn install
+          yarn encore production
+          
+      - name: Deploy Files to Server
+        uses: Pendect/action-rsyncer@v1.1.0
+        env: 
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+        with: 
+          flags: '-avzr'
+          options: ''
+          ssh_options: ''
+          src: '.'
+          dest: ${{secrets.SSH_USER}}@${{secrets.HOST}}:${{secrets.TARGET}}

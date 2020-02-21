@@ -16,7 +16,7 @@ nav {
     box-shadow: 0px 0px 10px 5px #0003;
     position: relative;
     z-index:1;
-    padding: 40px 50px 0px 50px;
+    padding: 30px 50px 0px 50px;
     box-sizing: border-box;
     @media only screen and (max-width:$MOBILE) { 
         padding: 40px 10px 0px 10px;
@@ -36,29 +36,24 @@ nav {
 }
 nav .title {
     justify-self: flex-start;
+    align-items:center;
+    display: flex;
     font-size: 34px;
     font-family: $FONT_HEADERS;
-    &:hover {
-        text-decoration: none;
-        color: $FONT_COLOR_DARK;
-    }
-    @media only screen and (max-width:$MOBILE){
-    display: none;
-    }
-}
 
-nav .title-short {
-    display: none;
-    justify-self: flex-start;
-    font-size: 34px;
-    font-family: $FONT_HEADERS;
+    img {
+        max-width: 240px;
+        max-height: 50px;
+        @media only screen and (max-width:$MOBILE){
+            max-width: 160px;
+        }
+    }
+
     &:hover {
         text-decoration: none;
         color: $FONT_COLOR_DARK;
     }
-    @media only screen and (max-width:$MOBILE){
-        display: block;
-    }
+
 }
 nav input {
     width: 100%;
@@ -72,25 +67,14 @@ nav input {
     }
 }
 .fa-bars {
-    color: #E9E9E9;
-    font-size: 40px;
+    color: rgb(109, 109, 109);
+    font-size: 30px;
     grid-column: 3;
     &:hover {
         cursor:pointer;
     }
 }
-.nav-container .fa-search {
-    display: none;
-    grid-column: 2;
-    color: #E9E9E9;
-    font-size: 40px;
-    &:hover {
-        cursor:pointer;
-    }
-    @media only screen and (max-width:$MOBILE) {
-        display: block;
-    }
-}
+
 
 #mask {
     position: fixed;
@@ -112,7 +96,7 @@ nav input {
 
 #nav-menu {
     position: fixed;
-    right: -320px;
+    right: -350px;
     top: 0;
     width: 100%;
     background:white;
@@ -141,7 +125,7 @@ nav input {
     }
 }
 .outer-container {
-    background: url('/images/custom/hero.png') center no-repeat;
+    background: url('/images/custom/hero.jpg') center no-repeat;
     background-size: cover;
     position: fixed;
     top: 0;
@@ -155,6 +139,9 @@ h1,h2,h3,h4 {
     font-family: $FONT_HEADERS;
     font-weight: 400;
     color: $FONT_COLOR_DARK;
+}
+h1 {
+    margin-top: 0px;
 }
 h2 {
     font-size: 24px;
@@ -178,13 +165,18 @@ p {
     font-family: $FONT_CONTENT;
     font-size: 16px;
     line-height: 21px;
-    color: $FONT_COLOR_MED;
+    color: $FONT_COLOR_DARK;
+
+    a {
+        color: $PRIMARY_COLOR;
+        text-decoration: underline;
+    }
 }
 
 .date {
     font-size: 12px;
     font-family: $FONT_HEADERS;
-    color: $FONT_COLOR_DARK;
+    color: $FONT_COLOR_MED;
     display: inline-block;
 }
 
@@ -194,10 +186,15 @@ p {
     padding: 5px 10px;
     font-weight: 400;
     margin:0px 5px 0px 0px;
-    background: $PRIMARY_COLOR;
+    background: #e6e6e6;
     font-size: 12px;
     font-weight: 400;
     border-radius: 5px;
+
+    &:hover {
+        text-decoration: none;
+        color: $FONT_COLOR_DARK;
+    }
 }
 
 .tags {
@@ -263,6 +260,9 @@ p {
     }
     @media only screen and (max-width:$MOBILE) {
         display: none;
+    }
+    p {
+        font-size:12px;
     }
 }
 

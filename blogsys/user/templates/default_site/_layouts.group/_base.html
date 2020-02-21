@@ -1,11 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title> Dev Blog | Dan Gowing </title>
-        <link rel="stylesheet" href="/build/main.css?v=3">
+        <link rel="stylesheet" href="/build/main.css?v=4">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:300&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Bitter:700|Raleway:300&display=swap" rel="stylesheet"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157545867-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-157545867-1');
+        </script>
+
         <style>
             /* Critial Styles that need to load on page load */
             
@@ -18,10 +33,8 @@
     <body>
         <nav>
             <div class='nav-container'>
-                <a class='title' href='/'> DanGowing.com</a>
-                <a class='title-short' href='/'> DG.com</a>
+                <a class='title' href='/'><img src='/logo.png'/></a>
                 <input type="text" placeholder='search'/>
-                <i class="fas fa-search"></i>
                 <i class="fas fa-bars" id='menu'></i>
             </div>
         </nav>

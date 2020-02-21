@@ -9,7 +9,9 @@
         </div>
     </div>
     <div class='site-info'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo accusamus enim blanditiis vel dolor sunt! In perspiciatis recusandae sint quas reiciendis deleniti delectus error omnis, magnam sed animi maxime. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, facilis expedita labore omnis eum totam repellat corrupti odit, officiis fugiat, asperiores aliquam earum enim dolorem ullam suscipit perspiciatis autem ad!
+        A development blog where I try to write down things I've googled so that I might find them again.
+        <br> <br> 
+        Occasionally you might find a useful page on this site. Please report it as an error.
     </div>
 </div>
 <div>
@@ -21,8 +23,9 @@
             <div class='meta'>
                 <div class='date'>{entry_date format="%F %d %Y"}</div>
                 <div class='tags'>
-                    <div class='tag'>Modern</div>
-                    <div class='tag'>Frontend</div>
+                    {categories style='linear' show_group='1' limit='3'}
+                        <div class='tag {category_name}'><a href="/blog/{category_url_title}">{category_name}</a></div>
+                    {/categories}
                 </div>
             </div>
             <p>

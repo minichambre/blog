@@ -6,3 +6,6 @@ cert_chain.crt
 dangowing.com.key
 blogsys/user/cache
 public_html/images/uploads/project/*
+public_html/build/main.css
+public_html/build/scripts.js
+blogsys/user/cache/current_version
